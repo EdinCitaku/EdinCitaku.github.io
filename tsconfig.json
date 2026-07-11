@@ -1,11 +1,17 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "public/pagefind"],
   "compilerOptions": {
+    "target": "ESNext",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@/astro-paper.config": ["./astro-paper.config"]
-    }
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@config": ["src/config.ts"],
+      "@interfaces/*": ["src/interface/*"],
+      "@utils/*": ["src/utils/*"]
+    },
+    "strict": true, // 或 "target": "ES6"
+    "esModuleInterop": true
   }
 }
