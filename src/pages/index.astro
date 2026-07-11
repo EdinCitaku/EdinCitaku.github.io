@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon/components";
+import MainCard from "@/components/MainCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Home">
+  <MainCard
+    title="Hi, I'm Edin"
+    description="Founder of Veltha — Building the Co-Adjuster for Workers' Comp"
+    textOverlay="HOME"
+    infoIcon="lucide:home"
+  >
+    <div class="space-y-8">
+      <section class="py-6">
+        <div class="flex flex-col items-center text-center">
+          <div class="avatar mb-6">
+            <div
+              class="w-32 h-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden"
+            >
+              <img src="/profile.png" alt="Edin Citaku" width="128" height="128" loading="eager" />
+            </div>
+          </div>
+          <h1
+            class="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-loose"
+          >
+            Edin Citaku
+          </h1>
+          <p class="text-xl text-base-content/80 max-w-3xl mb-2">
+            Founder of <a href="https://veltha.ai" target="_blank" class="underline">Veltha</a> — building the
+            Co-Adjuster for Workers' Comp. Based in San Francisco.
+          </p>
+          <p class="text-lg text-base-content/70 max-w-3xl mb-8">
+            On this blog I write about stuff that interests me.
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="/blog" class="btn btn-primary gap-2 btn-shine-effect">
+              <Icon name="lucide:book-open" class="w-5 h-5" />
+              <span>Read the Blog</span>
+            </a>
+            <a href="/about" class="btn btn-outline gap-2">
+              <Icon name="lucide:user" class="w-5 h-5" />
+              <span>About Me</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </MainCard>
+</BaseLayout>

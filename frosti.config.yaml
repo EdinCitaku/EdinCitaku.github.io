@@ -1,0 +1,77 @@
+# Site basics
+site:
+  tab: Edin Citaku
+  title: Edin Citaku
+  description: Founder of Veltha — Building the Co-Adjuster for Workers' Comp
+  language: en
+  favicon: /favicon.png
+  theme: # more themes: https://daisyui.com/docs/themes/
+    light: winter
+    dark: dracula
+    code: github-dark
+  date_format: MMM DD YYYY
+  blog:
+    pageSize: 8
+  menu:
+    - id: home
+      text: Home
+      href: /
+      svg: "material-symbols:home-outline-rounded"
+      target: _self
+    - id: about
+      text: About
+      href: /about
+      svg: "material-symbols:info-outline-rounded"
+      target: _self
+    - id: blog
+      text: Blog
+      href: /blog
+      svg: "material-symbols:book-2-outline-rounded"
+      target: _self
+    - id: contact
+      text: Contact
+      href: "mailto:edin@veltha.ai"
+      target: _blank
+      svg: "material-symbols:attach-email-outline-rounded"
+
+# Personal info
+user:
+  name: Edin Citaku
+  site: "https://edincitaku.com"
+  avatar: /profile.png
+  sidebar:
+    social:
+      - href: "https://github.com/EdinCitaku"
+        ariaLabel: GitHub
+        title: GitHub
+        svg: "ri:github-line"
+      - href: "https://www.linkedin.com/in/edin-citaku-564000127/"
+        ariaLabel: LinkedIn
+        title: LinkedIn
+        svg: "ri:linkedin-line"
+      - href: "https://x.com/Edin_Citaku"
+        ariaLabel: X(twitter)
+        title: X(twitter)
+        svg: "ri:twitter-line"
+      - href: "mailto:edin@veltha.ai"
+        ariaLabel: Email
+        title: Email
+        svg: "ri:mail-line"
+  footer:
+    social:
+      - href: "https://github.com/EdinCitaku"
+        ariaLabel: GitHub
+        title: GitHub
+        svg: "ri:github-line"
+      - href: "https://www.linkedin.com/in/edin-citaku-564000127/"
+        ariaLabel: LinkedIn
+        title: LinkedIn
+        svg: "ri:linkedin-line"
+      - href: "https://x.com/Edin_Citaku"
+        ariaLabel: X(twitter)
+        title: X(twitter)
+        svg: "ri:twitter-line"
+      - href: "mailto:edin@veltha.ai"
+        ariaLabel: Email
+        title: Email
+        svg: "ri:mail-line"

@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+import MainCard from "@/components/MainCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About">
+  <MainCard
+    title="About Me"
+    description="Founder of Veltha — Building the Co-Adjuster for Workers' Comp"
+    textOverlay="ABOUT"
+    infoIcon="lucide:user"
+  >
+    <div class="space-y-10 mb-8">
+      <section class="flex flex-col md:flex-row gap-8 items-center md:items-start">
+        <div class="avatar">
+          <div
+            class="w-32 h-32 md:w-40 md:h-40 rounded-xl ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden"
+          >
+            <img src="/profile.png" alt="Edin Citaku" width="160" height="160" loading="eager" />
+          </div>
+        </div>
+
+        <div class="flex-1 text-center md:text-left">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">Edin Citaku</h1>
+          <p class="text-xl text-base-content/80 mb-4">Founder of Veltha</p>
+
+          <p class="text-base-content/80 mb-6">
+            I'm the founder of <a href="https://veltha.ai" target="_blank" class="underline">Veltha</a>, where
+            we're building the Co-Adjuster for Workers' Comp. I'm based in San Francisco. On this blog I write
+            about stuff that interests me.
+          </p>
+
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            <a
+              href="https://github.com/EdinCitaku"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-sm btn-outline gap-2"
+            >
+              <Icon name="lucide:github" class="w-4 h-4" />
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/edin-citaku-564000127/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-sm btn-outline gap-2"
+            >
+              <Icon name="lucide:linkedin" class="w-4 h-4" />
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:edin@veltha.ai" class="btn btn-sm btn-outline gap-2">
+              <Icon name="lucide:mail" class="w-4 h-4" />
+              <span>edin@veltha.ai</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </MainCard>
+</BaseLayout>
