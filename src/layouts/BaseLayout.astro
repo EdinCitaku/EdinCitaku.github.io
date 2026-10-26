@@ -34,6 +34,32 @@ const {
     <Header title={title} description={description} favicon={SITE_FAVICON} image={image} />
     <title>{`${title} - ${SITE_TAB}`}</title>
 
+    <!-- GoatCounter analytics. Counts on astro:page-load so client-side navigations are tracked too. -->
+    <script is:inline>
+      (function () {
+        let loaded = false;
+        let pending = false;
+        function count() {
+          pending = false;
+          window.goatcounter.count({ path: location.pathname + location.search + location.hash });
+        }
+        document.addEventListener("astro:page-load", () => {
+          if (loaded) count();
+          else pending = true;
+        });
+        const s = document.createElement("script");
+        s.async = true;
+        s.src = "//gc.zgo.at/count.js";
+        s.dataset.goatcounter = "https://edincitaku.goatcounter.com/count";
+        s.dataset.goatcounterSettings = '{"no_onload": true}';
+        s.onload = () => {
+          loaded = true;
+          if (pending) count();
+        };
+        document.head.appendChild(s);
+      })();
+    </script>
+
     <script define:vars={{ SITE_THEME }} is:inline>
       (function () {
         const storedTheme = localStorage.getItem("theme");
