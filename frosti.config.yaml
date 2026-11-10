@@ -4,7 +4,7 @@ site:
   title: Edin Citaku
   description: Founder of Veltha — Building the Co-Adjuster for Workers' Comp
   language: en
-  favicon: /favicon.png
+  favicon: /favicon.svg
   theme: # more themes: https://daisyui.com/docs/themes/
     light: winter
     dark: dracula

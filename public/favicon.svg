@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" ry="112" fill="#0069ff"/>
+  <text x="256" y="268" text-anchor="middle" dominant-baseline="central"
+        font-family="Inter, -apple-system, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-weight="700" font-size="268" letter-spacing="-14" fill="#ffffff">EC</text>
+</svg>
