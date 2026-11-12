@@ -37,7 +37,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const INK = "#17140f";
 const MUTED = "#6d665a";
 const PAPER = "#f5f1e8";
-const ACCENT = "#7b2d26";
+const ACCENT = "#75659f";
 
 const fontDir = path.resolve("node_modules/@fontsource/newsreader/files");
 const loadFont = (file: string) => fs.readFile(path.join(fontDir, file));
