@@ -1,17 +1,11 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
   "compilerOptions": {
-    "target": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@config": ["src/config.ts"],
-      "@interfaces/*": ["src/interface/*"],
-      "@utils/*": ["src/utils/*"]
-    },
-    "strict": true, // 或 "target": "ES6"
-    "esModuleInterop": true
+      "@/*": ["src/*"]
+    }
   }
 }

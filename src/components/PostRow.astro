@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import type { Post } from "@/utils/posts";
+import { formatDate, formatMonth } from "@/utils/posts";
+
+interface Props {
+  post: Post;
+  number?: string;
+  /** Show only month and day, for lists already grouped by year. */
+  shortDate?: boolean;
+}
+
+const { post, number, shortDate = false } = Astro.props;
+const date = shortDate
+  ? formatMonth(post.data.pubDate)
+  : formatDate(post.data.pubDate);
+---
+
+<li class="row">
+  <a href={`/blog/${post.slug}/`} class:list={{ "has-num": number }}>
+    {number && <span class="label row-num">No. {number}</span>}
+    <div>
+      <time class="label row-date" datetime={post.data.pubDate.toISOString()}>{date}</time>
+      <h3 class="row-title">{post.data.title}</h3>
+      <p class="row-dek">{post.data.description}</p>
+    </div>
+    {
+      post.data.cover && (
+        <span class="row-thumb">
+          <Image src={post.data.cover} alt="" widths={[240, 480]} sizes="(max-width: 40rem) 6rem, 12rem" />
+        </span>
+      )
+    }
+  </a>
+</li>

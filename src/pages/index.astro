@@ -1,50 +1,74 @@
 ---
-import { Icon } from "astro-icon/components";
-import MainCard from "@/components/MainCard.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import PostRow from "@/components/PostRow.astro";
+import Base from "@/layouts/Base.astro";
+import { formatDate, getPosts, postNumber } from "@/utils/posts";
+
+const posts = await getPosts();
+const [lead, ...rest] = posts;
+const recent = rest.slice(0, 5);
 ---
 
-<BaseLayout title="Home">
-  <MainCard
-    title="Hi, I'm Edin"
-    description="Founder of Veltha — Building the Co-Adjuster for Workers' Comp"
-    textOverlay="HOME"
-    infoIcon="lucide:home"
-  >
-    <div class="space-y-8">
-      <section class="py-6">
-        <div class="flex flex-col items-center text-center">
-          <div class="avatar mb-6">
-            <div
-              class="w-32 h-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden"
-            >
-              <img src="/profile.png" alt="Edin Citaku" width="128" height="128" loading="eager" />
+<Base>
+  <div class="wrap">
+    <section class="hero">
+      <p class="label rise">Essays on startups, careers &amp; software</p>
+      <h1 class="hero-text rise rise-2">
+        I&rsquo;m Edin Citaku, founder of
+        <a href="https://veltha.ai" target="_blank" rel="noopener noreferrer">Veltha</a>, where we&rsquo;re building
+        the Co-Adjuster for workers&rsquo; comp. <em>Here I write about the things that hold my interest.</em>
+      </h1>
+    </section>
+
+    {
+      lead && (
+        <section aria-labelledby="latest">
+          <div class="section-head label">
+            <h2 class="label" id="latest">
+              The latest
+            </h2>
+            <span>No. {postNumber(posts, lead)}</span>
+          </div>
+          <article class="lead">
+            {
+              lead.data.cover && (
+                <a class="lead-art" href={`/blog/${lead.slug}/`} tabindex="-1" aria-hidden="true">
+                  <Image
+                    src={lead.data.cover}
+                    alt=""
+                    widths={[640, 960, 1280, 1612]}
+                    sizes="(max-width: 56rem) 100vw, 40rem"
+                    loading="eager"
+                  />
+                </a>
+              )
+            }
+            <div>
+              <div class="lead-meta label">
+                <time datetime={lead.data.pubDate.toISOString()}>{formatDate(lead.data.pubDate)}</time>
+                {lead.data.tags?.[0] && <span class="accent">{lead.data.tags[0]}</span>}
+              </div>
+              <h3 class="lead-title">
+                <a href={`/blog/${lead.slug}/`}>{lead.data.title}</a>
+              </h3>
+              <p class="lead-dek">{lead.data.description}</p>
+              <a class="more label" href={`/blog/${lead.slug}/`}>
+                Read the essay <span aria-hidden="true">&rarr;</span>
+              </a>
             </div>
-          </div>
-          <h1
-            class="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-loose"
-          >
-            Edin Citaku
-          </h1>
-          <p class="text-xl text-base-content/80 max-w-3xl mb-2">
-            Founder of <a href="https://veltha.ai" target="_blank" class="underline">Veltha</a> — building the
-            Co-Adjuster for Workers' Comp. Based in San Francisco.
-          </p>
-          <p class="text-lg text-base-content/70 max-w-3xl mb-8">
-            On this blog I write about stuff that interests me.
-          </p>
-          <div class="flex flex-wrap gap-4 justify-center">
-            <a href="/blog" class="btn btn-primary gap-2 btn-shine-effect">
-              <Icon name="lucide:book-open" class="w-5 h-5" />
-              <span>Read the Blog</span>
-            </a>
-            <a href="/about" class="btn btn-outline gap-2">
-              <Icon name="lucide:user" class="w-5 h-5" />
-              <span>About Me</span>
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
-  </MainCard>
-</BaseLayout>
+          </article>
+        </section>
+      )
+    }
+
+    <section aria-labelledby="earlier">
+      <div class="section-head label">
+        <h2 class="label" id="earlier">Earlier</h2>
+        <a href="/blog">All writing &rarr;</a>
+      </div>
+      <ol class="rows">
+        {recent.map((post) => <PostRow post={post} number={postNumber(posts, post)} />)}
+      </ol>
+    </section>
+  </div>
+</Base>

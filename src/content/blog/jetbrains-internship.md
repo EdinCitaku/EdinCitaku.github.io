@@ -4,6 +4,9 @@ image: /image/posts/jetbrains-internship/image.png
 pubDate: 2020-03-29
 description: My first two months at jetbrains are over now and I finished my first project. This is the perfect moment to recapitulate about my experiences.
 tags: ['career']
+cover: ../../assets/art/hodler-silvaplana.jpg
+coverAlt: "Painting of a still mountain lake mirroring golden autumn slopes under a clear sky."
+coverCredit: "Ferdinand Hodler, Lake Silvaplana in Autumn, 1907."
 ---
 When I first got the callback from jetbrains for an interview I was ecstatic! To work at such an impactful company was a long dream of mine.
 Here in Germany the job market for IT professionals is very good but it seems like the far majority of companies are some kind of consultancies that dont have any interesting products themselves.

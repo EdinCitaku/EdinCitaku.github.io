@@ -3,6 +3,9 @@ title: Palantir Interview Process
 pubDate: 2022-06-15
 description: A walkthrough of every step of the Palantir interview process for the Forward Deployed Engineer role, with the resources I used to prepare for each one.
 tags: ['career']
+cover: ../../assets/art/hodler-moench.jpg
+coverAlt: "Painting of a snow-covered alpine summit ringed by a wreath of white clouds against a blue sky."
+coverCredit: "Ferdinand Hodler, The Mönch with Clouds, 1911."
 ---
 
 ## Introduction

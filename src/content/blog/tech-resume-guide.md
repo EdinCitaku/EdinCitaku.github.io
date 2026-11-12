@@ -3,6 +3,9 @@ title: A quick guide on how to improve your tech resume
 pubDate: 2021-05-03
 description: A short collections of tipps and tricks for your resume that I have gathered over time 
 tags: ['career']
+cover: ../../assets/art/hodler-niesen.jpg
+coverAlt: "Painting of a single green pyramid-shaped mountain under a sky filled with patterned blue and white clouds."
+coverCredit: "Ferdinand Hodler, The Niesen, 1910."
 ---
 
 While being mod in the [CS Career Hub](https://cscareerhub.com/) discord I have looked at and suggested improvements for many resumes over the time. I used the knowledge I gained there to land internships at companies like jetbrains or amazon.

@@ -4,6 +4,9 @@ image: /image/posts/notion-linked-databases/image.png
 pubDate: 2020-09-04
 description: In this blog post I show you how to have a single calendar in notion that tracks tasks from different pages!
 tags: ['notion']
+cover: ../../assets/art/hodler-thunersee-spiegelung.jpg
+coverAlt: "Painting of blue mountains on either side of a lake, mirrored exactly in the still water."
+coverCredit: "Ferdinand Hodler, Lake Thun with Symmetrical Reflection, 1909."
 ---
 
 [Notion](https://www.notion.so/) is an amazing tool! I use it to organize almost all aspects of my life.

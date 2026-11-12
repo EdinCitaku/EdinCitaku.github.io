@@ -3,6 +3,9 @@ title: Explaining the hiring philosophy at big tech
 pubDate: 2022-05-16
 description: Trying to get into big tech can be quite demotivating, but don't get discouraged! Failing an interview does not mean you are not qualified.
 tags: ['career']
+cover: ../../assets/art/hodler-dents-du-midi.jpg
+coverAlt: "Painting of a jagged mountain ridge in browns and violets under a pale yellow sky."
+coverCredit: "Ferdinand Hodler, The Dents du Midi, 1916."
 ---
 
 A friend of mine recently had his last round interview at Uber and thought he nailed it, he texted me right after the interview about how excited he is about working at Uber this summer. He was so sure about getting this offer.

@@ -1,62 +1,52 @@
 ---
-import { Icon } from "astro-icon/components";
-import MainCard from "@/components/MainCard.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE, SOCIAL } from "@/config";
+import Base from "@/layouts/Base.astro";
+
+const links = SOCIAL.filter((item) => item.text !== "RSS");
+const display = (href: string) =>
+  href.replace(/^mailto:|^https?:\/\/(www\.)?/g, "").replace(/\/$/, "");
 ---
 
-<BaseLayout title="About">
-  <MainCard
-    title="About Me"
-    description="Founder of Veltha — Building the Co-Adjuster for Workers' Comp"
-    textOverlay="ABOUT"
-    infoIcon="lucide:user"
-  >
-    <div class="space-y-10 mb-8">
-      <section class="flex flex-col md:flex-row gap-8 items-center md:items-start">
-        <div class="avatar">
-          <div
-            class="w-32 h-32 md:w-40 md:h-40 rounded-xl ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden"
-          >
-            <img src="/profile.png" alt="Edin Citaku" width="160" height="160" loading="eager" />
-          </div>
-        </div>
+<Base title="About" description="About Edin Citaku, founder of Veltha.">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="label rise">About</p>
+      <h1 class="page-title rise rise-2">Edin <em>Citaku</em></h1>
+    </header>
 
-        <div class="flex-1 text-center md:text-left">
-          <h1 class="text-3xl md:text-4xl font-bold mb-2">Edin Citaku</h1>
-          <p class="text-xl text-base-content/80 mb-4">Founder of Veltha</p>
+    <section class="about">
+      <figure class="portrait">
+        <img src="/profile.png" alt="Portrait of Edin Citaku" width="800" height="800" />
+        <figcaption class="label">San Francisco</figcaption>
+      </figure>
 
-          <p class="text-base-content/80 mb-6">
-            I'm the founder of <a href="https://veltha.ai" target="_blank" class="underline">Veltha</a>, where
-            we're building the Co-Adjuster for Workers' Comp. I'm based in San Francisco. On this blog I write
-            about stuff that interests me.
-          </p>
+      <div class="about-body">
+        <p class="lede">
+          I&rsquo;m the founder of <a href="https://veltha.ai" target="_blank" rel="noopener noreferrer">Veltha</a>,
+          where we&rsquo;re building the Co-Adjuster for workers&rsquo; comp.
+        </p>
+        <p>
+          I&rsquo;m based in San Francisco. On this site I write about the things that interest me &mdash; lately
+          that means building a startup, and before that, careers in tech and the occasional piece of software.
+        </p>
+        <p>
+          The best way to reach me is by <a href={`mailto:${SITE.email}`}>email</a>. You can also follow new essays
+          through the <a href="/rss.xml">RSS feed</a>.
+        </p>
 
-          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-            <a
-              href="https://github.com/EdinCitaku"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-sm btn-outline gap-2"
-            >
-              <Icon name="lucide:github" class="w-4 h-4" />
-              <span>GitHub</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/edin-citaku-564000127/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-sm btn-outline gap-2"
-            >
-              <Icon name="lucide:linkedin" class="w-4 h-4" />
-              <span>LinkedIn</span>
-            </a>
-            <a href="mailto:edin@veltha.ai" class="btn btn-sm btn-outline gap-2">
-              <Icon name="lucide:mail" class="w-4 h-4" />
-              <span>edin@veltha.ai</span>
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
-  </MainCard>
-</BaseLayout>
+        <ul class="contact">
+          {
+            links.map((item) => (
+              <li>
+                <span class="label">{item.text}</span>
+                <a href={item.href} {...(item.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                  {display(item.href)}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+  </div>
+</Base>

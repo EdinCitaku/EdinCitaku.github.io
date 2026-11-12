@@ -3,6 +3,9 @@ title: My Software Engineering internship at Amazon Luxembourg
 pubDate: 2022-03-12
 description: My experience as an intern at Amazon as well as my impression of the Luxembourg office
 tags: ['career']
+cover: ../../assets/art/hodler-grammont.jpg
+coverAlt: "Painting of a turquoise lake with rippling waves and a green mountain range on the far shore."
+coverCredit: "Ferdinand Hodler, The Grammont, 1905."
 ---
 
 My internship at Amazon in Luxembourg just finished. During my interview preparation I searched around for information about the Luxembourg office but couldn't really find anything.

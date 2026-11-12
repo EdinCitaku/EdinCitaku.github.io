@@ -3,6 +3,9 @@ title: Loading html files in React
 pubDate: 2020-04-09
 description: A simple solution for a problem I encountered while writing a privacy policy page
 tags: ['react', 'nodejs']
+cover: ../../assets/art/hodler-dents-blanches.jpg
+coverAlt: "Painting of a rocky mountain chain lit pink and orange by morning sun above green meadows."
+coverCredit: "Ferdinand Hodler, The Dents Blanches near Champéry in the Morning Sun, 1916."
 ---
 Recently I solved an issue in the webapp I am writing for the [Zukunftschreiben](https://zukunftschreiben.org/) team.
 Since it was a fairly easy fix and I didn't immediately find a solution on google, I wanted to write down what I came up with.

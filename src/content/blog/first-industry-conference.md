@@ -3,6 +3,9 @@ title: What we got wrong at our first industry conference
 pubDate: 2026-07-10
 description: Lessons from our startup's first conference booth in workers' comp insurance — what failed, what worked, and the playbook we're taking to conference number two.
 tags: ['startup']
+cover: ../../assets/art/hodler-genfersee-lausanne.jpg
+coverAlt: "Painting of a small lakeside town beneath a vast pale sky, the far shore of the lake a thin blue line."
+coverCredit: "Ferdinand Hodler, Lake Geneva from Lausanne, 1912."
 ---
 
 Ten minutes into our first industry conference, I realized almost every cold email I'd sent in the last month was wrong.

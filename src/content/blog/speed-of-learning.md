@@ -3,6 +3,9 @@ title: How speed of learning makes startups succeed
 pubDate: 2026-10-23
 description: Working hard is table stakes for every startup. What separates the ones that win is how fast they test their assumptions against the real world and update them.
 tags: ['startup']
+cover: ../../assets/art/hodler-abendnebel-thunersee.jpg
+coverAlt: "Painting of a lake seen from above at dusk, pale yellow light breaking through bands of blue mist between dark slopes."
+coverCredit: "Ferdinand Hodler, Evening Mist on Lake Thun, 1908."
 ---
 
 When you imagine a startup, the image in your head probably looks like this: a bunch of people working day and night, sipping energy drinks at 2 am, chasing crazy ideas they are convinced will change the world. But that's pretty much every startup. What sets the ones that eventually win apart from the ones that spend years working insanely hard and then disappear?

@@ -1,0 +1,51 @@
+---
+import PostRow from "@/components/PostRow.astro";
+import Base from "@/layouts/Base.astro";
+import { getPosts, type Post } from "@/utils/posts";
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const tags = [
+    ...new Set(posts.flatMap((post) => post.data.tags ?? [])),
+  ].sort();
+  return tags.map((tag) => ({
+    params: { tag },
+    props: {
+      tags,
+      posts: posts.filter((post) => post.data.tags?.includes(tag)),
+    },
+  }));
+}
+
+interface Props {
+  tags: string[];
+  posts: Post[];
+}
+
+const { tag } = Astro.params;
+const { tags, posts } = Astro.props;
+---
+
+<Base title={`Writing on ${tag}`} description={`Essays by Edin Citaku filed under ${tag}.`}>
+  <div class="wrap">
+    <header class="page-head">
+      <p class="label">{posts.length} {posts.length === 1 ? "essay" : "essays"} filed under</p>
+      <h1 class="page-title"><em>{tag}</em></h1>
+      <nav class="topics label" aria-label="Topics">
+        <a href="/blog">All</a>
+        {
+          tags.map((item) => (
+            <a href={`/blog/tag/${item}/`} aria-current={item === tag ? "page" : undefined}>
+              {item}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+
+    <div class="section-head label"><span>Newest first</span></div>
+    <ol class="rows">
+      {posts.map((post) => <PostRow post={post} />)}
+    </ol>
+  </div>
+</Base>

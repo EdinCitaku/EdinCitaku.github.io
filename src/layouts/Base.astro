@@ -1,0 +1,128 @@
+---
+import "@fontsource-variable/newsreader/opsz.css";
+import "@fontsource-variable/newsreader/opsz-italic.css";
+import "@fontsource-variable/inter/wght.css";
+import "@/styles/global.css";
+
+import { ClientRouter } from "astro:transitions";
+import Footer from "@/components/Footer.astro";
+import Masthead from "@/components/Masthead.astro";
+import { SITE } from "@/config";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: "website" | "article";
+}
+
+const {
+  title,
+  description = SITE.description,
+  image = "/og/default.png",
+  type = "website",
+} = Astro.props;
+
+const pageTitle = title ? `${title} — ${SITE.title}` : SITE.title;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
+---
+
+<!doctype html>
+<html lang={SITE.language} data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={SITE.author} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+    <link rel="alternate icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#f5f1e8" />
+
+    <meta property="og:site_name" content={SITE.title} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title ?? SITE.title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <ClientRouter />
+
+    <!-- Theme: follows the system until the reader picks one. -->
+    <script is:inline>
+      (function () {
+        function apply() {
+          var stored = null;
+          try {
+            stored = localStorage.getItem("theme");
+          } catch (e) {}
+          var dark =
+            stored === "dark" ||
+            (stored !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", dark ? "#121110" : "#f5f1e8");
+        }
+        apply();
+        if (window.__themeBound) return;
+        window.__themeBound = true;
+        document.addEventListener("astro:after-swap", apply);
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", apply);
+        document.addEventListener("click", function (event) {
+          if (!event.target.closest || !event.target.closest("[data-theme-toggle]")) return;
+          var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          try {
+            localStorage.setItem("theme", next);
+          } catch (e) {}
+          apply();
+        });
+      })();
+    </script>
+
+    <!-- GoatCounter analytics. Counts on astro:page-load so client-side navigations are tracked too. -->
+    <script is:inline>
+      (function () {
+        if (window.__gcBound) return;
+        window.__gcBound = true;
+        let loaded = false;
+        let pending = false;
+        function count() {
+          pending = false;
+          window.goatcounter.count({ path: location.pathname + location.search + location.hash });
+        }
+        document.addEventListener("astro:page-load", () => {
+          if (loaded) count();
+          else pending = true;
+        });
+        const s = document.createElement("script");
+        s.async = true;
+        s.src = "//gc.zgo.at/count.js";
+        s.dataset.goatcounter = "https://edincitaku.goatcounter.com/count";
+        s.dataset.goatcounterSettings = '{"no_onload": true}';
+        s.onload = () => {
+          loaded = true;
+          if (pending) count();
+        };
+        document.head.appendChild(s);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <a class="skip label" href="#main">Skip to content</a>
+    <Masthead />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
