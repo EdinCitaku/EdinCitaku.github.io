@@ -32,12 +32,12 @@ Post content... ![screenshot](/image/posts/my-post/screenshot.png)
 Each post can carry a piece of artwork, shown on the home page, in the archive and at the top of the post. Put the image in `src/assets/art/` and add to the post's frontmatter:
 
 ```md
-cover: ../../assets/art/hodler-abendnebel-thunersee.jpg
+cover: ../../assets/art/hodler-chosen-one.jpg
 coverAlt: "Short description of the picture."
-coverCredit: "Ferdinand Hodler, Evening Mist on Lake Thun, 1908."
+coverCredit: "Ferdinand Hodler, The Chosen One, 1903."
 ```
 
-The current covers are public-domain landscape paintings by Ferdinand Hodler (1853–1918), taken from [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Landscape_paintings_by_Ferdinand_Hodler). Images are resized and converted to WebP at build time.
+The current covers are public-domain paintings from [Wikimedia Commons](https://commons.wikimedia.org), chosen to match each post's subject (Hodler, Larsson, Klee, Delaunay, Boccioni, Turner). Lists crop the picture to 3:2; the post page shows it whole. Images are resized and converted to WebP at build time.
 
 ## Site configuration
 

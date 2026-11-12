@@ -2,9 +2,9 @@
 title: Collection of tech blogs
 pubDate: 2021-10-25
 description: I couldn't find a list of good tech blogs so I created my own and will try to keep it up to date regularly
-cover: ../../assets/art/hodler-formenrhythmus.jpg
-coverAlt: "Painting of a green lake in horizontal bands, with a row of small clouds repeated along the horizon."
-coverCredit: "Ferdinand Hodler, Rhythmic Landscape on Lake Geneva, 1908."
+cover: ../../assets/art/larsson-lisbeth-reading.jpg
+coverAlt: "Watercolour of a girl bent over a book at a green table beside a pot of red flowers, in a brightly painted room."
+coverCredit: "Carl Larsson, Lisbeth Reading, 1904."
 ---
 
 

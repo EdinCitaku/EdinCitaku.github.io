@@ -314,11 +314,18 @@ img {
 }
 
 .lead-art img,
-.row-thumb img,
-.article-cover img {
+.row-thumb img {
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+/* On the post itself the artwork is shown whole, at its own proportions. */
+.article-cover img {
+  width: auto;
+  max-width: 100%;
+  max-height: min(40rem, 80vh);
+  margin-inline: auto;
 }
 
 .lead-art img,
@@ -580,7 +587,8 @@ img {
 }
 
 .article-cover {
-  max-width: 56rem;
+  width: fit-content;
+  max-width: min(56rem, 100%);
   margin: 0 auto clamp(2rem, 5vw, 3.5rem);
 }
 
